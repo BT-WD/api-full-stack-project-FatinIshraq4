@@ -18,6 +18,56 @@ body {
   margin-bottom: 10px;
 }
 
+.header h2 {
+  margin: 0 0 15px 0;
+}
+
+/* GET DATA BUTTON */
+.fetch-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0 15px 0;
+  transition: background 0.3s;
+}
+
+.fetch-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.fetch-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* STATUS MESSAGE */
+.message {
+  background: #10b981;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* WARNING MESSAGE */
+.warning {
+  background: #f59e0b;
+  color: #1f2937;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
 /* TOP IDEAS */
 .ideas {
   display: flex;
@@ -94,4 +144,95 @@ body {
 .bar {
   width: 6px;
   border-radius: 2px;
+}
+
+/* GET DATA BUTTON */
+.fetch-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0 15px 0;
+  transition: background 0.3s;
+}
+
+.fetch-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.fetch-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* STATUS MESSAGE */
+.message {
+  background: #10b981;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* WARNING MESSAGE */
+.warning {
+  background: #f59e0b;
+  color: #1f2937;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+/* GET DATA BUTTON */
+.fetch-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0 15px 0;
+  transition: background 0.3s;
+}
+
+.fetch-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.fetch-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* STATUS MESSAGE */
+.message {
+  background: #10b981;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* WARNING MESSAGE */
+.warning {
+  background: #f59e0b;
+  color: #1f2937;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
 }
