@@ -2,7 +2,7 @@ const { useState, useEffect } = React;
 
 const STOCKS = ["AAPL", "MSFT", "TSLA", "NVDA", "AMZN"];
 
-// Generate random stock prices
+
 function generateRandomPrices(length = 120, startPrice = 100) {
   const prices = [startPrice];
   for (let i = 1; i < length; i++) {
@@ -13,7 +13,7 @@ function generateRandomPrices(length = 120, startPrice = 100) {
   return prices;
 }
 
-// Save data to localStorage with timestamp
+
 function saveDataLocally(data) {
   const timestamp = new Date().toISOString();
   const dataToStore = {
@@ -24,14 +24,14 @@ function saveDataLocally(data) {
   console.log("Stock data saved to localStorage at", timestamp);
 }
 
-// Load data from localStorage
+
 function loadDataLocally() {
   const stored = localStorage.getItem("stockData");
   if (!stored) return null;
 
   const { data, timestamp } = JSON.parse(stored);
 
-  // Check if data is from today
+  
   const storedDate = new Date(timestamp);
   const today = new Date();
   
@@ -44,13 +44,13 @@ function loadDataLocally() {
   return null;
 }
 
-// Load favorites from localStorage
+
 function loadFavorites() {
   const stored = localStorage.getItem("favorites");
   return stored ? JSON.parse(stored) : [];
 }
 
-// Save favorites to localStorage
+
 function saveFavorites(favs) {
   localStorage.setItem("favorites", JSON.stringify(favs));
 }
@@ -110,7 +110,7 @@ function App() {
   const [message, setMessage] = useState("");
   const [favorites, setFavorites] = useState(() => loadFavorites() || []);
 
-  // Generate random stock data
+  
   const generateRandomData = () => {
     setLoading(true);
     setMessage("Getting stock data...");
@@ -128,7 +128,7 @@ function App() {
     setLoading(false);
   };
 
-  // Add to favorites
+  
   const addToFavorites = (pair) => {
     if (!favorites.some(f => f.a === pair.a && f.b === pair.b)) {
       const newFavs = [...favorites, pair];
@@ -140,7 +140,7 @@ function App() {
     }
   };
 
-  // Remove from favorites
+  
   const removeFromFavorites = (pair) => {
     const newFavs = favorites.filter(f => !(f.a === pair.a && f.b === pair.b));
     setFavorites(newFavs);
@@ -148,10 +148,10 @@ function App() {
     setMessage("Removed from favorites");
   };
 
-  // Check if we have valid data for all stocks
+  
   const hasValidData = STOCKS.every(stock => stockData[stock] && stockData[stock].length > 0);
 
-  // Calculate correlation matrix
+  
   const matrix = STOCKS.map(a =>
     STOCKS.map(b => {
       if (a === b) return 1;
@@ -164,7 +164,7 @@ function App() {
     })
   );
 
-  // Find trading ideas
+  
   let ideas = [];
 
   for (let i = 0; i < STOCKS.length; i++) {
@@ -182,7 +182,7 @@ function App() {
   ideas.sort((x, y) => Math.abs(y.corr) - Math.abs(x.corr));
   ideas = ideas.slice(0, 3);
 
-  // Calculate spread for selected pair
+  
   const pairA = selectedPair?.a || "AAPL";
   const pairB = selectedPair?.b || "MSFT";
 
